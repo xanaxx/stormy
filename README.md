@@ -1,2 +1,2 @@
-![Storym App](images/Stormy.png =100x20)
+<img src="images/Stormy.png" alt="Stormy app" height="50"/>
 Stormy is desktop weather app based on React and Electron.
