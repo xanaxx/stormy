@@ -1,5 +1,10 @@
 'use strict'
 
+const {
+  default: installExtension,
+  REACT_DEVELOPER_TOOLS
+} = require('electron-devtools-installer')
+
 // Import parts of electron to use
 const { app, BrowserWindow } = require('electron')
 const path = require('path')
@@ -68,7 +73,10 @@ function createWindow () {
   mainWindow.once('ready-to-show', () => {
     mainWindow.show()
 
-    // Open the DevTools automatically if developing
+    installExtension(REACT_DEVELOPER_TOOLS)
+      .then(name => console.log(`Added Extension:  ${name}`))
+      .catch(err => console.log('An error occurred: ', err))
+
     if (dev) {
       mainWindow.webContents.openDevTools({ mode: 'undocked' })
     }

@@ -1,16 +1,24 @@
 import React, { Component } from 'react'
+import styled from 'react-emotion'
 
 import * as run from '../../services/firstrun'
-
 import Header from '../Header'
 import Options from '../Options'
 import Weather from '../Weather'
+import Select from '../Select'
+
+const Content = styled('div')`
+  width: 100%;
+  height: 100%;
+  position: fixed;
+`
 
 class Home extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      optionsVisible: false
+      optionsVisible: false,
+      selected: false
     }
     this.toggleOptions = this.toggleOptions.bind(this)
   }
@@ -21,10 +29,21 @@ class Home extends Component {
   }
 
   render () {
+    const weather = <Weather />
+
+    const select = <Select changeLanguage={this.props.changeLanguage} />
+
     return (
       <React.Fragment>
-        <Header toggleOptions={this.toggleOptions} optionsVisible={this.state.optionsVisible} />
-        {this.state.optionsVisible ? <Options /> : <Weather />}
+        <Header
+          toggleOptions={this.toggleOptions}
+          optionsVisible={this.state.optionsVisible}
+        />
+        <Content>
+          {this.state.optionsVisible
+            ? <Options />
+            : this.state.selected ? weather : select}
+        </Content>
       </React.Fragment>
     )
   }

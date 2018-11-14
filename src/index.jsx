@@ -4,6 +4,14 @@ import { render } from 'react-dom'
 import Home from './containers/Home'
 
 import { injectGlobal } from 'emotion'
+import { IntlProvider, addLocaleData } from 'react-intl'
+import pl from 'react-intl/locale-data/pl'
+import en from 'react-intl/locale-data/en'
+import de from 'react-intl/locale-data/de'
+
+import localeData from './locale'
+
+addLocaleData([...pl, ...en, ...de])
 
 injectGlobal`
 html{
@@ -25,11 +33,26 @@ body{
 
 // Create main App component
 class App extends React.Component {
+  constructor (props) {
+    super(props)
+    this.state = {
+      language: 'en'
+    }
+    this.changeLanguage = this.changeLanguage.bind(this)
+  }
+
+  changeLanguage (language) {
+    this.setState({ language: language })
+  }
+
   render () {
     return (
-      <div>
-        <Home />
-      </div>
+      <IntlProvider
+        locale={this.state.language}
+        messages={localeData[this.state.language]}
+      >
+        <Home changeLanguage={this.changeLanguage} />
+      </IntlProvider>
     )
   }
 }

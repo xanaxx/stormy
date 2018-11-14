@@ -1,3 +1,14 @@
 {
-  "presets": ["@babel/preset-react"]
+  "presets": [
+    "@babel/preset-react",
+    "@babel/preset-env"
+  ],
+  "plugins": [
+    [
+      "react-intl",
+      {
+        "messagesDir": "./dist/messages"
+      }
+    ]
+  ]
 }
