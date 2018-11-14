@@ -1,4 +1,4 @@
-<img src="images/Stormy.png" alt="Stormy app" height="100"/>
+<img src="images/logos/Stormy.png" alt="Stormy app" height="100"/>
 
 ---
 
