@@ -3,6 +3,7 @@ import { render } from 'react-dom';
 
 import Home from './containers/Home';
 
+import { colors } from './styles';
 import { injectGlobal } from 'emotion';
 import { IntlProvider, addLocaleData } from 'react-intl';
 import pl from 'react-intl/locale-data/pl';
@@ -22,7 +23,7 @@ html{
   margin: 0;
 }
 body{
-  background-color: #183956 ;
+  background-color: ${colors.background} ;
   width: 100%;
   height: 100%;
   padding: 0;

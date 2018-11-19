@@ -1,4 +1,8 @@
 {
-  "Select.greeting": "Welcome!",
-  "Select.select": "Please select language"
+    "Select.greeting": "Welcome!",
+    "Select.select": "Please select language",
+    "Location.provide": "Please input location",
+    "Location.advice": "Supported City names or coordinates.",
+    "Location.placeholder": "City",
+    "Location.confirm": "Select"
 }

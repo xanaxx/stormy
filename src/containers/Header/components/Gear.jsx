@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import * as PropTypes from 'prop-types';
 
 import styled from 'react-emotion';
-import { colors } from '../../../../styles';
+import { colors } from '../../../styles';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCog } from '@fortawesome/free-solid-svg-icons';
 
-class Options extends Component {
+class Gear extends Component {
     render() {
         const Button = styled('button')`
       background-color: rgb(0, 0, 0, 0);
@@ -34,9 +34,9 @@ class Options extends Component {
     }
 }
 
-Options.propTypes = {
+Gear.propTypes = {
     onClick: PropTypes.func.isRequired,
     dimmed: PropTypes.bool,
 };
 
-export default Options;
+export default Gear;

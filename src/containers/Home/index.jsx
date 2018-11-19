@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import * as PropTypes from 'prop-types';
 import styled from 'react-emotion';
 
-import * as run from '../../services/firstrun';
+import * as frun from '../../services/firstrun';
 import Header from '../Header';
 import Options from '../Options';
 import Weather from '../Weather';
@@ -25,14 +25,16 @@ class Home extends Component {
     }
 
     toggleOptions() {
-        run.checkFirstRun();
         this.setState({ optionsVisible: !this.state.optionsVisible });
     }
 
     render() {
         const weather = <Weather />;
-
         const select = <Select changeLanguage={this.props.changeLanguage} />;
+        const main =
+            (this.state.optionsVisible
+                ? <Options />
+                : this.state.selected ? weather : select);
 
         return (
             <React.Fragment>
@@ -41,9 +43,7 @@ class Home extends Component {
                     optionsVisible={this.state.optionsVisible}
                 />
                 <Content>
-                    {this.state.optionsVisible
-                        ? <Options />
-                        : this.state.selected ? weather : select}
+                    {main}
                 </Content>
             </React.Fragment>
         );

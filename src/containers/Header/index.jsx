@@ -6,7 +6,7 @@ import { colors } from '../../styles';
 
 import Minus from '../../components/Minus';
 import Cancel from '../../components/Cancel/Cancel';
-import Options from './components/Options';
+import Gear from './components/Gear';
 
 const window = require('electron').remote.getCurrentWindow();
 
@@ -61,7 +61,7 @@ class Header extends Component {
                     <Buttons>
                         <Cancel onClick={this.handleClose} />
                         <Minus onClick={this.handleMinimize} />
-                        <Options
+                        <Gear
                             onClick={this.props.toggleOptions}
                             dimmed={this.props.optionsVisible}
                         />

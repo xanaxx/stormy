@@ -3,6 +3,7 @@ import * as PropTypes from 'prop-types';
 import styled from 'react-emotion';
 
 import Greeting from './components/Greeting';
+import Location from './components/Location';
 
 const Column = styled('div')`
   display: flex;
@@ -14,19 +15,14 @@ const Column = styled('div')`
 class Select extends Component {
     constructor(props) {
         super(props);
-        this.changeLanguage = this.changeLanguage.bind(this);
-    }
-
-    changeLanguage(language) {
-        this.props.changeLanguage(language);
     }
 
     render() {
         return (
             <React.Fragment>
                 <Column>
-                    <Greeting changeLanguage={this.changeLanguage} />
-
+                    <Greeting changeLanguage={this.props.changeLanguage} />
+                    <Location changeLocation={this.props.changeLocation} />
                 </Column>
             </React.Fragment>
         );
@@ -35,6 +31,7 @@ class Select extends Component {
 
 Select.propTypes = {
     changeLanguage: PropTypes.func.isRequired,
+    changeLocation: PropTypes.func.isRequired,
 };
 
 export default Select;

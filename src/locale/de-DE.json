@@ -1,4 +1,8 @@
 {
-  "Select.greeting": "Willkommen!",
-  "Select.select": "Bitte wählen Sie die Sprache aus"
+    "Select.greeting": "Willkommen!",
+    "Select.select": "Bitte wählen Sie die Sprache aus",
+    "Location.provide": "Bitte geben Sie den Speicherort",
+    "Location.advice": "Unterstützte Städtenamen oder Koordinaten",
+    "Location.placeholder": "Stadt",
+    "Location.confirm": "Wählen"
 }

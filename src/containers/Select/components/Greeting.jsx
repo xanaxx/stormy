@@ -6,12 +6,14 @@ import * as PropTypes from 'prop-types';
 import { flags } from '../../../assets/flags';
 
 const Content = styled('div')`
-  padding: 25px;
+  width: 100%;
+  padding: 5px 0px 10px 0px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
 `;
+
 const Flags = styled('div')`
   display: flex;
   align-items: center;
@@ -23,6 +25,7 @@ const Greet = styled('div')`
   font-family: 'Patrick Hand';
   color: white;
 `;
+
 const P = styled('p')`
 font-size: 18px;
   font-family: 'Patrick Hand';
