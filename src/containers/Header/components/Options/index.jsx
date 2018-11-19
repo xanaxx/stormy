@@ -1,14 +1,15 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import * as PropTypes from 'prop-types';
 
-import styled from 'react-emotion'
-import { colors } from '../../../../styles'
+import styled from 'react-emotion';
+import { colors } from '../../../../styles';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCog } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCog } from '@fortawesome/free-solid-svg-icons';
 
 class Options extends Component {
-  render () {
-    const Button = styled('button')`
+    render() {
+        const Button = styled('button')`
       background-color: rgb(0, 0, 0, 0);
       border: none;
       padding: 5px;
@@ -23,14 +24,19 @@ class Options extends Component {
       &:hover {
         color: ${colors.hover};
       }
-    `
+    `;
 
-    return (
-      <Button onClick={this.props.onClick}>
-        <FontAwesomeIcon icon={faCog} />
-      </Button>
-    )
-  }
+        return (
+            <Button onClick={this.props.onClick}>
+                <FontAwesomeIcon icon={faCog} />
+            </Button>
+        );
+    }
 }
 
-export default Options
+Options.propTypes = {
+    onClick: PropTypes.func.isRequired,
+    dimmed: PropTypes.bool,
+};
+
+export default Options;

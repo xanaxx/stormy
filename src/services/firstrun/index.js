@@ -1,4 +1,4 @@
-import { remote } from 'electron'
+import { remote } from 'electron';
 
 /**
  *  - Check first run
@@ -6,6 +6,6 @@ import { remote } from 'electron'
  *  - Clear first run
  */
 
-export function checkFirstRun () {
-  console.log('app path', remote.process.execPath)
+export function checkFirstRun() {
+    console.log('app path', remote.process.execPath);
 }

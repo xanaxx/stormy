@@ -5,6 +5,7 @@ builds/
 # Development folders and files #
 #################################
 dist/
+build/
 node_modules/
 
 # Log files & folders #

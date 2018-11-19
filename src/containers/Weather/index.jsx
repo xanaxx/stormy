@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
-import styled from 'react-emotion'
+import React, { Component } from 'react';
+import styled from 'react-emotion';
 
-import * as WeatherType from '../../assets/weather'
+import * as WeatherType from '../../assets/weather';
 
 const Content = styled('div')`
   width: 100%;
@@ -9,19 +9,19 @@ const Content = styled('div')`
   display: flex;
   align-items: center;
   justify-content: center;
-`
+`;
 
 class Weather extends Component {
-  constructor (props) {
-    super(props)
-  }
-  render () {
-    return (
-      <React.Fragment>
-        <Content>a</Content>
-      </React.Fragment>
-    )
-  }
+    constructor(props) {
+        super(props);
+    }
+    render() {
+        return (
+            <React.Fragment>
+                <Content>a</Content>
+            </React.Fragment>
+        );
+    }
 }
 
-export default Weather
+export default Weather;

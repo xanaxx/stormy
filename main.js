@@ -27,20 +27,14 @@ if (
   dev = true
 }
 
-// Temporary fix broken high-dpi scale factor on Windows (125% scaling)
-// info: https://github.com/electron/electron/issues/9691
-if (process.platform === 'win32') {
-  app.commandLine.appendSwitch('high-dpi-support', 'true')
-  app.commandLine.appendSwitch('force-device-scale-factor', '1')
-}
-
-function createWindow () {
+function createWindow() {
   // Create the browser window.
   mainWindow = new BrowserWindow({
     width: 450,
     height: 400,
     minWidth: 450,
     minHeight: 400,
+    resizable: false,
     show: false,
     frame: false,
     titleBarStyle: 'hidden'

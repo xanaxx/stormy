@@ -2,10 +2,10 @@ import React from 'react';
 import styled from 'react-emotion';
 import * as PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMinus } from '@fortawesome/free-solid-svg-icons';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { colors } from '../../styles';
 
-const Minus = ({ onClick }) => {
+const Cancel = ({ onClick }) => {
     const Button = styled('button')`
     background-color: rgb(0, 0, 0, 0);
     border: none;
@@ -17,9 +17,7 @@ const Minus = ({ onClick }) => {
     margin: 4px;
     color: ${colors.default};
     -webkit-app-region: no-drag;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+
     &:hover {
       color: ${colors.hover};
     }
@@ -27,13 +25,13 @@ const Minus = ({ onClick }) => {
 
     return (
         <Button onClick={onClick}>
-            <FontAwesomeIcon icon={faMinus} size='lg' />
+            <FontAwesomeIcon icon={faTimes} size='lg' />
         </Button>
     );
 };
 
-Minus.propTypes = {
+Cancel.propTypes = {
     onClick: PropTypes.func.isRequired,
 };
 
-export default Minus;
+export default Cancel;
